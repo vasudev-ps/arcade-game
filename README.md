@@ -17,7 +17,8 @@ Frogger is a Game where Player tries to reach the water without coliding into an
 
 ##How to Play
 
-* Select The Character You like from right side of the screen.
+* Start the Game by opening `index.html` file in the browser.
+* Select the Character You like from right side of the screen.
 * Use UP DOWN LEFT RIGHT Arrow keys to navigate the player.
 * Beware of the **BUGS !!**
 

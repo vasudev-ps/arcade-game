@@ -26,14 +26,15 @@ Enemy.prototype.update = function(dt) {
         this.x = 0;
         this.y = this.enemy_position();
     }
-
+    //Checking for collision
         if (this.collidesWith(player)) {
-        player.point = player.point - 10;
+        player.point = player.point - 10; // decrease the point if collided.
         console.log(player.point);
         player.reset();
     }
 };
 
+// provide enemy bugs positon.
 Enemy.prototype.enemy_position = function() {
     return Math.floor(Math.random() * 3 + 1) * this.rowToYMultiplier;
 };
@@ -43,6 +44,7 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+//check for collision
 Enemy.prototype.collidesWith = function(player) {
     var colWidth = 101;
     var rowHeight = 101;
@@ -72,19 +74,25 @@ var Player = function() {
     this.y = this.row * this.rowToYMultiplier;
 
 };
+// Update the player's position
 Player.prototype.update = function() {
     this.x = this.col * this.columnToXMultiplier;
     this.y = this.row * this.rowToYMultiplier;
 };
+
+//Draw the player on the screen, required method for game
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     this.printPoints();
 };
 
+//drawing player to starting position if collided or completes the task
 Player.prototype.reset = function() {
     this.col = this.startCol;
     this.row = this.startRow;
 };
+
+//input handling for player
 Player.prototype.handleInput = function(direction) {
     switch (direction) {
         case 'left':
@@ -115,6 +123,8 @@ Player.prototype.handleInput = function(direction) {
             break;
     }
 };
+
+//funtion for printing point
 Player.prototype. printPoints = function(){
             ctx.font = "36px impact";
             ctx.textAlign = "center";

@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Effective JavaScript: Frogger</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jQuery.js"></script>
 </head>
+
 <body>
-    <div id = "game" class = "game">
-    <script src="js/resources.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/engine.js"></script>
-    <script> </script>
+    <div id="game" class="game">
+        <script src="js/resources.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/engine.js"></script>
+        <script>
+        </script>
     </div>
-    <div class = "choose-area">
-    <h1 class = "welcome">Hello! Welcome</h1>
-    <ul class = "instruction">
-            <li class = "list">Select The Character You Like.</li>
-            <li class = "list">Use UP DOWN LEFT RIGHT Keys To Navigate The Character.</li>
-            <li class = "list">Beware Of  <span class = "red">  BUGS!!!</span>.</li>
-    </ul>
+    <div class="choose-area">
+        <h1 class="welcome">Hello! Welcome</h1>
+        <ul class="instruction">
+            <li class="list">Select The Character You Like.</li>
+            <li class="list">Use UP DOWN LEFT RIGHT Keys To Navigate The Character.</li>
+            <li class="list">Beware Of <span class="red">  BUGS!!!</span>.</li>
+        </ul>
         <div id="chars">
-            <input type="radio" name="char" /><label id="cb"><img src="images/char-boy.png" /></label>
-            <input type="radio" name="char" /><label id="cpg"><img src="images/char-pink-girl.png" /></label>
-            <input type="radio" name="char" /><label id="ccg"><img src="images/char-cat-girl.png" /></label>
-            <input type="radio" name="char" /><label id="chg"><img src="images/char-horn-girl.png" /></label>
-            <input type="radio" name="char" /><label id="cpg2"><img src="images/char-princess-girl.png" /></label>
+            <input type="radio" name="char" />
+            <label id="cb"><img src="images/char-boy.png" />
+            </label>
+            <input type="radio" name="char" />
+            <label id="cpg"><img src="images/char-pink-girl.png" />
+            </label>
+            <input type="radio" name="char" />
+            <label id="ccg"><img src="images/char-cat-girl.png" />
+            </label>
+            <input type="radio" name="char" />
+            <label id="chg"><img src="images/char-horn-girl.png" />
+            </label>
+            <input type="radio" name="char" />
+            <label id="cpg2"><img src="images/char-princess-girl.png" />
+            </label>
         </div>
     </div>
 
@@ -34,16 +47,27 @@
         $('#cb').addClass('selected');
         $('#chars input:radio').addClass('input_hidden');
         $('#chars label').click(function() {
-        $(this).addClass('selected').siblings().removeClass('selected');
-        var id = $(this).attr('id');
-            switch(id){
-                case 'cb' : player.sprite = 'images/char-boy.png'; break;
-                case 'cpg' : player.sprite = 'images/char-pink-girl.png'; break;
-                case 'ccg' : player.sprite = 'images/char-cat-girl.png'; break;
-                case 'chg' : player.sprite = 'images/char-horn-girl.png'; break;
-                case 'cpg2' : player.sprite = 'images/char-princess-girl.png'; break;
+            $(this).addClass('selected').siblings().removeClass('selected');
+            var id = $(this).attr('id');
+            switch (id) {
+                case 'cb':
+                    player.sprite = 'images/char-boy.png';
+                    break;
+                case 'cpg':
+                    player.sprite = 'images/char-pink-girl.png';
+                    break;
+                case 'ccg':
+                    player.sprite = 'images/char-cat-girl.png';
+                    break;
+                case 'chg':
+                    player.sprite = 'images/char-horn-girl.png';
+                    break;
+                case 'cpg2':
+                    player.sprite = 'images/char-princess-girl.png';
+                    break;
             }
         });
     </script>
 </body>
+
 </html>

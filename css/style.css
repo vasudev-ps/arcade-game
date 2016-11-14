@@ -3,12 +3,12 @@ body {
     background-color: #ccc;
     font-family: Helvetica, serif;
 }
-.choose-area{
+.choose-area {
     width: 50%;
     float: right;
     text-align: center;
 }
-.game{
+.game {
     width: 50%;
     float: left;
 }
@@ -16,11 +16,9 @@ body {
     position: absolute;
     left: -9999px;
 }
-
 .selected {
     background-color: #E37222;
 }
-
 #chars label {
     display: inline-block;
     cursor: pointer;
@@ -31,22 +29,17 @@ body {
 #chars label img {
     padding: 3px;
 }
-.instruction{
-
+.instruction {} .welcome {
+    color: #0375b4;
 }
-.welcome{
-    color :#0375b4;
-}
-.list{
-        color :#062f4f;
+.list {
+    color: #062f4f;
     list-style: none;
     line-height: 3em;
     text-align: left;
-
 }
-
-.red{
-    color:red;
+.red {
+    color: red;
     font-weight: bold;
     font-size: 20px;
 }

@@ -19,7 +19,7 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-        this.x += this.speed * dt;
+    this.x += this.speed * dt;
     // if the x position is large than the canvas width
     // set the x position to 0
     if (this.x > ctx.canvas.width) {
@@ -27,7 +27,7 @@ Enemy.prototype.update = function(dt) {
         this.y = this.enemy_position();
     }
     //Checking for collision
-        if (this.collidesWith(player)) {
+    if (this.collidesWith(player)) {
         player.point = player.point - 10; // decrease the point if collided.
         console.log(player.point);
         player.reset();
@@ -49,8 +49,8 @@ Enemy.prototype.collidesWith = function(player) {
     var colWidth = 101;
     var rowHeight = 101;
 
-    var col = Math.floor(this.x/colWidth);
-    var row = Math.floor(this.y/rowHeight) + 1;
+    var col = Math.floor(this.x / colWidth);
+    var row = Math.floor(this.y / rowHeight) + 1;
 
     if (col == player.col && row == player.row) {
         return true;
@@ -106,7 +106,7 @@ Player.prototype.handleInput = function(direction) {
             if (this.row == 0) {
                 this.row = 5;
                 this.point = this.point + 10;
-                console.log(this.point);//add point
+                console.log(this.point); //add point
             }
             break;
         case 'right':
@@ -125,24 +125,24 @@ Player.prototype.handleInput = function(direction) {
 };
 
 //funtion for printing point
-Player.prototype. printPoints = function(){
-            ctx.font = "36px impact";
-            ctx.textAlign = "center";
-            ctx.fillStyle = "white";
-            ctx.fillText(this.point,450,100);
-            ctx.strokeStyle = "black";
-            ctx.lineWidth= 2;
-            ctx.strokeText(this.point,450,100);
-}
-// Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
+Player.prototype.printPoints = function() {
+        ctx.font = "36px impact";
+        ctx.textAlign = "center";
+        ctx.fillStyle = "white";
+        ctx.fillText(this.point, 450, 100);
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 2;
+        ctx.strokeText(this.point, 450, 100);
+    }
+    // Now instantiate your objects.
+    // Place all enemy objects in an array called allEnemies
+    // Place the player object in a variable called player
 var enemy1 = new Enemy();
 var enemy2 = new Enemy();
 var enemy3 = new Enemy();
 var enemy4 = new Enemy();
 var allEnemies = [];
-allEnemies.push(enemy1,enemy2,enemy3,enemy4);
+allEnemies.push(enemy1, enemy2, enemy3, enemy4);
 var player = new Player();
 
 // This listens for key presses and sends the keys to your
